@@ -7,6 +7,8 @@ spec:
   ports:
   - port: 3000
     protocol: TCP
-  type: ClusterIP
+    targetPort: 3000
+    nodePort: 31000 # Optional: Specify the nodePort, or Kubernetes will assign one automatically
+  type: NodePort # Change the type to NodePort
   selector:
-   role: frontend
+    role: frontend
